@@ -18,7 +18,7 @@
     <link rel="shortcut icon" type="image/png" href="./assets/favicon.png" />
 
     <!-- Put here your site title -->
-    <title>[Your name here] | Developer</title>
+    <title>{{user_name}} | Developer</title>
     <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
     <meta name="keywords" content="[username], [name], skill" />
     <!-- Improve your SEO by adding a small descrption of you -->
@@ -33,7 +33,14 @@
     <script>
       ScrollReveal({ reset: false });
     </script>
-
+     export default {
+  name: "template",
+  data() {
+    return {
+      user_name: process.env.PORTFOLIO_USERNAME
+    };
+  }
+};
     <!-- Remove this script once you setup your custom portfolio -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
@@ -46,7 +53,7 @@
     <div id="hero" class="jumbotron">
       <div class="container">
         <h1 class="hero-title" class="load-hidden">
-          Hi, my name is <span class="text-color-main">Your Name</span>
+          Hi, my name is <span class="text-color-main">{{user_name}}</span>
           <br />
           I'm the Unknown Developer.
         </h1>
